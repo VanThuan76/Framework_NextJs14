@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ImageProps } from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import { useTheme } from 'next-themes';
 import React from 'react';
 
@@ -16,8 +16,9 @@ export function PreImage({ src, layer, ...rest }: Props) {
   return (
     <React.Fragment>
       <div className='relative h-full w-full overflow-hidden'>
-        <img
+        <Image
           src={src as string}
+          width={1200}
           style={{ width: `${rest.width}px`, height: `${rest.height}px` }}
           {...rest}
           onLoad={() => setImageLoaded(true)}
@@ -38,7 +39,14 @@ export function PreImage({ src, layer, ...rest }: Props) {
               !imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img src='/default.png' alt='Default' className='h-full w-full object-cover' />
+            <Image
+              width={1200}
+              height={550}
+              style={{ maxWidth: '100%', height: 'auto' }}
+              src='/default.png'
+              alt='Default'
+              className='h-full w-full object-cover'
+            />
           </div>
         )}
       </div>

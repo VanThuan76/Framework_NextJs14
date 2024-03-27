@@ -126,10 +126,7 @@ export default function usePagination<T>({ queryKey, apiFn, defaultParams }: Pro
     for (const newFilter of newFilters) {
       const existingFilterIndex = updatedFilterArr.findIndex(item => item.field === newFilter.field);
       if (existingFilterIndex !== -1) {
-        updatedFilterArr[existingFilterIndex] = {
-          ...updatedFilterArr[existingFilterIndex],
-          value: newFilter.value,
-        };
+        updatedFilterArr[existingFilterIndex] = { ...updatedFilterArr[existingFilterIndex], value: newFilter.value };
       } else {
         updatedFilterArr.push(newFilter);
       }
@@ -180,14 +177,7 @@ export default function usePagination<T>({ queryKey, apiFn, defaultParams }: Pro
   const { data, isLoading, refetch } = useQuery({
     queryKey: [...queryKey, router],
     queryFn: () =>
-      apiFn({
-        ...defaultParams,
-        ...router.query,
-        page: pageIndex,
-        size: pageSize,
-        filters: finalFilter,
-        sorts: sorts,
-      }),
+      apiFn({ ...defaultParams, ...router.query, page: pageIndex, size: pageSize, filters: finalFilter, sorts: sorts }),
     enabled: router.isReady,
   });
   const tableConfig = {

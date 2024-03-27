@@ -27,3 +27,47 @@ export type ConditionItem = {
   operator: string;
   value: any;
 };
+
+export const OPTIONS_FILTER = [
+  { value: '<', label: 'nhỏ hơn' },
+  { value: '>', label: 'lớn hơn' },
+  { value: '=', label: 'bằng' },
+];
+export type OperationType =
+  | '='
+  | '<>'
+  | '<'
+  | '<='
+  | '>'
+  | '>='
+  | 'startsWith'
+  | 'endsWith'
+  | 'contains'
+  | 'notEmpty'
+  | 'isNull'
+  | 'in'
+  | 'notIn';
+export type InputSearch = {
+  id: React.Key;
+  disable?: boolean;
+  property: string;
+  label: string | string[];
+  active: boolean;
+  fieldType: any;
+  operator: OperationType;
+  value?: any;
+  className?: string;
+  onChange?: (value: any) => void;
+} & (
+  | {
+      inputType: 'select';
+      options: { value: React.Key; label: string }[];
+    }
+  | {
+      inputType: 'text' | 'number' | 'date' | 'date-range';
+    }
+  | {
+      inputType: 'date-range' | 'date';
+      disable?: any;
+    }
+);
