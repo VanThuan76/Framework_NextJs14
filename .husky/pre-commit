@@ -7,7 +7,7 @@ echo '🏗️👷 Styling, testing and building your project before committing'
 pnpm run check:format ||
 (
     echo '🤢🤮🤢🤮 Its FOKING RAW - Your styling looks disgusting. 🤢🤮🤢🤮
-            Prettier Check Failed. Run pnpm run format, add changes and try commit again.';
+            Prettier Check Failed. Run npm run format, add changes and try commit again.';
     false;
 )
 
@@ -35,7 +35,7 @@ pnpm run test:turbo ||
 )
 
 # Run Million Tests (assuming million test command is 'million test')
-# pnpm run million:test ||
+# npm run million:test ||
 # (
 #     echo '❌MILLION❌ Million tests failed! ❌MILLION❌
 #          Fix the failing tests and try committing again.'

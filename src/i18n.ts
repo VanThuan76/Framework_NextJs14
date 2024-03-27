@@ -16,7 +16,7 @@ const localeMessages = {
 // Exporting default function that asynchronously receives
 // the locale object and returns the configuration object
 export default getRequestConfig(({ locale }) => {
-  // Load messages for the current locale 
+  // Load messages for the current locale
   //@ts-ignore
   const primaryMessages: AbstractIntlMessages = localeMessages[locale] || localeMessages['en-US'];
 
