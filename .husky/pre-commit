@@ -4,15 +4,15 @@
 echo '🏗️👷 Styling, testing and building your project before committing'
 
 # Check Prettier standards
-npm run check:format ||
+pnpm run check:format ||
 (
     echo '🤢🤮🤢🤮 Its FOKING RAW - Your styling looks disgusting. 🤢🤮🤢🤮
-            Prettier Check Failed. Run npm run format, add changes and try commit again.';
+            Prettier Check Failed. Run pnpm run format, add changes and try commit again.';
     false;
 )
 
 # Check ESLint Standards
-npm run check:lint ||
+pnpm run check:lint ||
 (
         echo '😤🏀👋😤 Get that weak shit out of here! 😤🏀👋😤 
                 ESLint Check Failed. Make the required changes listed above, add changes and try to commit again.'
@@ -20,14 +20,14 @@ npm run check:lint ||
 )
 
 # Check tsconfig standards
-npm run check:types ||
+pnpm run check:types ||
 (
     echo '🤡😂❌🤡 Failed Type check. 🤡😂❌🤡
             Are you seriously trying to write that? Make the changes required above.'
     false;
 )
 # Run Turbo Tests
-npm run test:turbo ||
+pnpm run test:turbo ||
 (
     echo '❌❌ Turbo tests failed! ❌❌
          Fix the failing tests and try committing again.'
@@ -35,7 +35,7 @@ npm run test:turbo ||
 )
 
 # Run Million Tests (assuming million test command is 'million test')
-# npm run million:test ||
+# pnpm run million:test ||
 # (
 #     echo '❌MILLION❌ Million tests failed! ❌MILLION❌
 #          Fix the failing tests and try committing again.'
@@ -44,7 +44,7 @@ npm run test:turbo ||
 # If everything passes... Now we can commit
 echo '🤔🤔🤔🤔... Alright.... Code looks good to me... Trying to build now. 🤔🤔🤔🤔'
 
-npm run build ||
+pnpm run build ||
 (
     echo '❌👷🔨❌ Better call Bob... Because your build failed ❌👷🔨❌
             Next build failed: View the errors above to see why. 

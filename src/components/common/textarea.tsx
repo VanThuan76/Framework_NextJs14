@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { cn } from '@/utils/other/tailwind';
+import { cn } from '@/utils/other/tw';
 
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
 

@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/common/popover';
 import { Button } from '@/components/common/button';
 import { Input } from '@/components/common/input';
-import { cn } from '@/utils/other/tailwind';
+import { cn } from '@/utils/other/tw';
 
 interface DataTableColumnHeaderProps<TData, TValue> extends React.HTMLAttributes<HTMLDivElement> {
   column: Column<TData, TValue>;

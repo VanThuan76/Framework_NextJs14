@@ -3,7 +3,7 @@ import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 import { CalendarIcon } from 'lucide-react';
 
-import { cn } from '@/utils/other/tailwind';
+import { cn } from '@/utils/other/tw';
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/common/form';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/common/popover';
 import { Button } from '@/components/common/button';

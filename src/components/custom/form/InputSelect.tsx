@@ -2,7 +2,7 @@ import React from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { Check, ChevronDown } from 'lucide-react';
 
-import { cn } from '@/utils/other/tailwind';
+import { cn } from '@/utils/other/tw';
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/common/form';
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '@/components/common/command';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/common/popover';

@@ -1,5 +1,5 @@
 'use client';
-import { cn } from '@/utils/other/tailwind';
+import { cn } from '@/utils/other/tw';
 import { DragHandleDots2Icon } from '@radix-ui/react-icons';
 import * as ResizablePrimitive from 'react-resizable-panels';
 

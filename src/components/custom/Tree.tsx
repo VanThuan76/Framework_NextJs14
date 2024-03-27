@@ -3,7 +3,7 @@ import React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronRight, type LucideIcon } from 'lucide-react';
 import useResizeObserver from 'use-resize-observer';
-import { cn } from '@/utils/other/tailwind';
+import { cn } from '@/utils/other/tw';
 import { Checkbox } from '../common/checkbox';
 
 interface TreeDataItem {

@@ -26,17 +26,7 @@ const withNextIntl = nextIntlPlugin(
   // Specify a custom next-intl path
   './src/i18n.ts',
 );
-
-/**
- * Extremely fast and lightweight optimizing compiler that make components up to 70% faster..
- * @see https://million.dev/docs/introduction
- */
-const withMillion = config => {
-  const millionConfig = {
-    auto: true,
-  };
-
-  return million({ ...config, ...millionConfig });
-};
-
-export default withMillion(withNextIntl(withMDX(nextConfig)));
+export default million.next(withNextIntl(withMDX(nextConfig)), {
+  auto: { rsc: true },
+});
+// export default withNextIntl(withMDX(nextConfig));

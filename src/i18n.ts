@@ -3,24 +3,25 @@ import type { AbstractIntlMessages } from 'next-intl';
 import { getRequestConfig } from 'next-intl/server';
 
 // Import all the locale JSON files
-import en_us from '@/resource/lang/en-us.json';
-import vi_vn from '@/resource/lang/vi-vn.json';
+import en_US from '@/resource/lang/en-US.json';
+import vi_VN from '@/resource/lang/vi-VN.json';
 
 // Create a mapping from locale identifiers
 // to the specific imported JSON modules
-const localeMessages: { [key: string]: {} } = {
-  'en-us': en_us,
-  vi_vn: vi_vn,
+const localeMessages = {
+  'en-US': en_US,
+  'vi-VN': vi_VN,
 };
 
 // Exporting default function that asynchronously receives
 // the locale object and returns the configuration object
 export default getRequestConfig(({ locale }) => {
-  // Load messages for the current locale
-  const primaryMessages: AbstractIntlMessages = localeMessages[locale] || localeMessages['en-us'];
+  // Load messages for the current locale 
+  //@ts-ignore
+  const primaryMessages: AbstractIntlMessages = localeMessages[locale] || localeMessages['en-US'];
 
   // Load messages for the fallback locale
-  const fallbackMessages: AbstractIntlMessages = localeMessages['en-us'];
+  const fallbackMessages: AbstractIntlMessages = localeMessages['en-US'];
 
   // Merge primary locale messages with fallback locale messages
   const messages = deepmerge(fallbackMessages, primaryMessages);
